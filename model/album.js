@@ -1,20 +1,25 @@
 const mongoose = require("mongoose");
 
 const AlbumSchema = new mongoose.Schema({
-    name: {
-        type: String
+    albumName: {
+        type: String,
+        default: 'Music Clone'
     },
     by: {
-        type: String
+        type: String,
+        default: 'Music Clone'
+
     },
     numberOfLikes: {
         type: Number,
         default: 0
     },
     imageUri: {
-        type: String
+        type: String,
+        default: 'https://cdn1.iconfinder.com/data/icons/weby-flat-multimedia-2/64/multimedia-02-512.png'
     },
-    artistsHeadLine: {
+    imageId: String,
+    artistHeadLine: {
         type: String
     },
     song: [{

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const AlbumCategorySchema = new mongoose.Schema({
-    title: {
+    albumTitleName: {
         type: String
     },
     album: [{

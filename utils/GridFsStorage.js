@@ -25,7 +25,7 @@ const storage = new GridFsStorage({
     url: mongoUri,
     file: (req, file) => {
         // console.log(file);
-        if (file.mimetype.split('/')[0] === 'video') {
+        if (file.mimetype.split('/')[0] === 'audio') {
             // console.log(file.mimetype)
             return new Promise((resolve, reject) => {
                 crypto.randomBytes(16, (err, buf) => {
@@ -49,8 +49,8 @@ const storage = new GridFsStorage({
 
 
 const multerFilter = (req, file, cb) => {
-    // console.log(file)
-    if (file.mimetype.startsWith('audio') || file.mimetype.startsWith('video') || file.mimetype.startsWith('image')) {
+    // console.log(file) || file.mimetype.startsWith('video') || file.mimetype.startsWith('image')
+    if (file.mimetype.startsWith('audio')) {
         cb(null, true);
     }
     else {

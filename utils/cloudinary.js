@@ -8,15 +8,15 @@ exports.cloudinary = cloudinary.config({
     api_secret: process.env.cloudinary_api_secret
 });
 
-exports.resizeImages = async (req, res, next) => {
-    // console.log(req.files)
-    if (!req.files.songImage || !req.files.albumImage) return next();
-    await sharp(req.files.songImage[0].path)
-        .resize(500, 500)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 });
-    next();
-};
+// exports.resizeImages = async (req, res, next) => {
+//     console.log(req.file)
+//     if (!req.file.songImage || !req.file.albumImage) return next();
+//     await sharp(req.file.path)
+//         .resize(500, 500)
+//         .toFormat('png')
+//         .jpeg({ quality: 90 });
+//     next();
+// };
 
 
 exports.imageMulter = multer({
